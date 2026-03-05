@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ── LIGHT MODE (default) ── */
+:root, [data-theme="light"] {
+  --bg:       #E3E2DE;
+  --bg2:      #D8D7D3;
+  --bg3:      #CECDC9;
+  --card:     #E3E2DE;
+  --border:   #C7C7C7;
+  --border2:  #ADADAD;
+  --text:     #141414;
+  --text2:    #444343;
+  --text3:    #7A7A7A;
+  --accent:   #1351AA;
+  --accent2:  #0D3E82;
+  --accent-bg: rgba(19,81,170,0.08);
+  --accent-border: rgba(19,81,170,0.2);
+  --danger:   #C0392B;
+  --success:  #1A7A4A;
+  --white:    #FFFFFF;
+  --btn-text: #E3E2DE;
+}
+
+/* ── DARK MODE ── */
+[data-theme="dark"] {
+  --bg:       #141414;
+  --bg2:      #1A1A1A;
+  --bg3:      #202020;
+  --card:     #1A1A1A;
+  --border:   #2A2A2A;
+  --border2:  #333333;
+  --text:     #E3E2DE;
+  --text2:    #A0A09C;
+  --text3:    #666662;
+  --accent:   #4A7FD4;
+  --accent2:  #6B9FE4;
+  --accent-bg: rgba(74,127,212,0.1);
+  --accent-border: rgba(74,127,212,0.25);
+  --danger:   #E05252;
+  --success:  #3DB87A;
+  --white:    #1A1A1A;
+  --btn-text: #141414;
+}
+
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
+
+body {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s linear, color 0.3s linear;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); }
+
+/* ── Utility Classes ── */
+.label-text {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text3);
+}
+
+.poster-heading {
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: var(--text);
+}
+
+.border-grid {
+  border: 1px solid var(--border);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--btn-text);
+  border: none;
+  padding: 14px 28px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: background 0.3s linear;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover { background: var(--text); }
+
+.btn-secondary {
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  padding: 14px 28px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: background 0.3s linear;
+}
+
+.btn-secondary:hover { background: var(--accent); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.btn-ghost:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.input-field {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 14px;
+  font-family: 'Space Grotesk', sans-serif;
+  outline: none;
+  transition: border-color 0.3s linear;
+}
+
+.input-field:focus { border-color: var(--accent); }
+.input-field::placeholder { color: var(--text3); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text3);
+  padding-right: 24px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+select option {
+  background: var(--bg2);
+  color: var(--text);
+}
